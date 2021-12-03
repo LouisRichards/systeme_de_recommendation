@@ -32,5 +32,3 @@ def enregistrer(nom_fichier):
 
     similarites.to_csv(nom_fichier, sep='\t')
 
-
-print(similarite_pearson(0, 1))

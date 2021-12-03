@@ -78,3 +78,6 @@ def erreur_moyenne(bdd_complet_sim):
                 denominateur += 1
 
     return numerateur / denominateur
+
+
+print(evaluation_biais(complet))

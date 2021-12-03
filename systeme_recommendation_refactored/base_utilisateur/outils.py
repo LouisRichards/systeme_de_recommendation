@@ -3,6 +3,7 @@ import pandas as pd
 
 bdd = pd.read_csv(r'bdd\incomplet.csv', delimiter='\t').dropna(axis=1)
 
+
 def norme_utilisateurs(utilisateur_a, utilisateur_b):
 
     somme_a, somme_b = 0, 0
@@ -15,6 +16,7 @@ def norme_utilisateurs(utilisateur_a, utilisateur_b):
 
     return np.sqrt(somme_a) * np.sqrt(somme_b)
 
+
 def produit_utilisateurs(utilisateur_a, utilisateur_b):
 
     produit = 0
@@ -25,6 +27,7 @@ def produit_utilisateurs(utilisateur_a, utilisateur_b):
             produit += note_utilisateur_a * note_utilisateur_b
 
     return produit
+
 
 def moyenne_utilisateurs(utilisateur_a, utilisateur_b):
 
@@ -38,6 +41,7 @@ def moyenne_utilisateurs(utilisateur_a, utilisateur_b):
 
     return somme/nb_note
 
+
 def moyenne_utilisateur(utilisateur):
 
     somme, nb_note = 0, 0
@@ -50,6 +54,7 @@ def moyenne_utilisateur(utilisateur):
 
     return somme/nb_note
 
+
 def enregistrer_normes(nom_fichier):
 
     donnees = []
@@ -61,7 +66,6 @@ def enregistrer_normes(nom_fichier):
     normes = pd.DataFrame(np.array_split(donnees, bdd.shape[0]))
 
     normes.to_csv(nom_fichier, sep='\t')
-
 
 
 def enregistrer_produits(nom_fichier):
